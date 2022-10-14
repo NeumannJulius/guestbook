@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.server.ResponseStatusException;
 
 /**
@@ -130,6 +131,29 @@ class GuestbookController {
 
 		return "guestbook :: entry";
 	}
+
+	@RequestMapping(path="/guestbook/{entry}/likeEntry")
+	String likeEntry(@PathVariable Optional<GuestbookEntry> entry){
+		//Optional<GuestbookEntry> entri = guestbook.findById(entry.getId());
+		//entry.likeEntry();
+		//return guestBook(model, null);
+		entry.get().likeEntry();
+		guestbook.save(entry.get());
+
+		return "redirect:/guestbook";
+	}
+	
+	@RequestMapping(path="/guestbook/{entry}/dislikeEntry")
+	String dislikeEntry(@PathVariable Optional<GuestbookEntry> entry){
+		//Optional<GuestbookEntry> entri = guestbook.findById(entry.getId());
+		entry.get().dislikeEntry();
+		guestbook.save(entry.get());
+
+		return "redirect:/guestbook";
+		
+		//return "redirect:/guestbook";
+	}
+
 
 	/**
 	 * Deletes a {@link GuestbookEntry}. This request can only be performed by authenticated users with admin privileges.

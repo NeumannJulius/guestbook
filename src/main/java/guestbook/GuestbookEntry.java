@@ -35,6 +35,7 @@ class GuestbookEntry {
 
 	private @Id @GeneratedValue Long id;
 	private final String name, text;
+	public int likes,dislikes;
 	private final LocalDateTime date;
 
 	/**
@@ -50,6 +51,8 @@ class GuestbookEntry {
 
 		this.name = name;
 		this.text = text;
+		this.likes = 0;
+		this.dislikes = 0;
 		this.date = LocalDateTime.now();
 	}
 
@@ -58,6 +61,23 @@ class GuestbookEntry {
 		this.name = null;
 		this.text = null;
 		this.date = null;
+		this.likes = 0;
+		this.dislikes = 0;
+	}
+
+	public void likeEntry(){
+		likes +=1;
+	}
+	public void dislikeEntry(){
+		dislikes +=1;
+	}
+
+	public int getLikes(){
+		return likes;
+	}
+
+	public int getdislikes(){
+		return dislikes;
 	}
 
 	public String getName() {

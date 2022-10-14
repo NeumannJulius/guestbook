@@ -5,6 +5,9 @@ div#entries, #form {
 
 .card {
 	margin-bottom: 2em;
+	border-radius: 4px;
+	border: 3px solid #045199;
+	margin: 4px 2px;
 }
 
 .card-title {
@@ -21,4 +24,84 @@ blockquote {
 
 form#form {
 	padding: 0 1.25em;
+	border: 2px;
+	font-size: 25px;
+	font-weight: 750;
+	border-radius: 4px;
+	color: rgb(82, 7, 7);
 }
+.form-control{
+	padding: 0 1.25em;
+	border: 2px;
+	font-size: 25px;
+	font-weight: 1000;
+	font-display:calc();
+	border-radius: 4px;
+	color: rgb(82, 7, 7);
+}
+
+.button {
+	border: 2px;
+	color: white;
+	padding: 6px 14px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	float:left;
+	/*display: ;*/
+	font-size: 14px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	
+	}
+
+  .button1 {
+	background-color: white;
+	color: black;
+	border: 2px solid #013b70;
+  }
+  
+  .button1:hover {
+	background-color: #052f7c;
+	color: white;
+	padding: 8px 16px;
+  }
+  
+  .button2 {
+	background-color: white;
+	color: black;
+	border: 2px solid #c40808;
+  }
+  
+  .button2:hover {
+	background-color: #ca0818;
+	color: white;
+	padding: 8px 16px;
+  }
+
+  .button2::after{
+	background-color: #ca0818;
+	color: rgb(165, 16, 16);
+	padding: 8px 16px;
+
+  }
+
+.btn-btn-secondary{
+	border: 5px;
+	color: rgb(2, 110, 56);
+	padding: 6px 14px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	float:left;
+	font-size:25px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+.btn-btn-secondary:hover {
+	background-color: #016e10;
+	font-weight: 750;
+	color: white;
+  }
