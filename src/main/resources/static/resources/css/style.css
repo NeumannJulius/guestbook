@@ -5,9 +5,10 @@ div#entries, #form {
 
 .card {
 	margin-bottom: 2em;
-	border-radius: 4px;
+	border-radius: 15px;
 	border: 3px solid #045199;
 	margin: 4px 2px;
+	padding: 20px 20px;
 }
 
 .card-title {
@@ -26,18 +27,21 @@ form#form {
 	padding: 0 1.25em;
 	border: 2px;
 	font-size: 25px;
-	font-weight: 750;
-	border-radius: 4px;
+	font-weight: 700;
+	border-radius: 15px;
 	color: rgb(82, 7, 7);
+	padding: 0px 10px;
+	text-align: left;
 }
 .form-control{
 	padding: 0 1.25em;
 	border: 2px;
 	font-size: 25px;
-	font-weight: 1000;
+	font-weight: 500;
 	font-display:calc();
 	border-radius: 4px;
 	color: rgb(82, 7, 7);
+	padding: 0px 5px;
 }
 
 .button {
@@ -105,3 +109,4 @@ form#form {
 	font-weight: 750;
 	color: white;
   }
+

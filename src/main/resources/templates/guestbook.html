@@ -55,13 +55,13 @@
 						<blockquote class="entrytext" th:text="${entry.text}"></blockquote>
 					</div>
 					<div class="card-body">
-						<form sec:authorize="hasRole('ANONYMOUS')" method = "request" th:method="likeEntry" th:action="@{/guestbook/{id}/likeEntry(id=${entry.id})}" th:attr="data-entry-id=${entry.id}">
+						<form method = "request" th:method="likeEntry" th:action="@{/guestbook/{id}/likeEntry(id=${entry.id})}" th:attr="data-entry-id=${entry.id}">
 							<button th:title="#{guestbook.form.like}" class="button button1">
 								<i class="fa fa-thumbs-up"></i>
 								<text class = "likes" th:text="${entry.likes}"></text>
 							</button>
 						</form>
-						<form sec:authorize="hasRole('ANONYMOUS')" method = "request" th:method="dislikeEntry" th:action="@{/guestbook/{id}/dislikeEntry(id=${entry.id})}" th:attr="data-entry-id=${entry.id}">
+						<form method = "request" th:method="dislikeEntry" th:action="@{/guestbook/{id}/dislikeEntry(id=${entry.id})}" th:attr="data-entry-id=${entry.id}">
 							<button th:title="#{guestbook.form.dislike}" class="button button2">
 								<i class="fa fa-thumbs-down"></i>
 								<text class = "likes" th:text="${entry.dislikes}"></text>
@@ -81,6 +81,11 @@
 				<label for="name" th:text="#{guestbook.form.name}">Name</label><br /> 
 				<input class="form-control" type="text" th:field="*{name}" th:errorclass="is-invalid" required="required" />
 				<div th:if="${#fields.hasErrors('name')}" class="invalid-feedback" th:text="#{guestbook.form.name.required}">Please provide a name.</div> 
+			</div>
+			<div class="form-group">
+				<label for="email" th:text="#{guestbook.form.email}">Email</label><br /> 
+				<input th:field="*{email}" th:errorclass="is-invalid" class="form-control" ></input>
+				<div th:if="${#fields.hasErrors('email')}" class="invalid-feedback" th:text="#{guestbook.form.text.required}">Please provide a Email.</div>
 			</div>
 			<div class="form-group">
 				<label for="text" th:text="#{guestbook.form.text}">Text</label><br /> 
